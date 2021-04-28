@@ -28,7 +28,7 @@ void loop()
     static unsigned long timepoint = millis();
     if(millis()-timepoint>1000U){                            //time interval: 1s
         timepoint = millis();
-        temperature = readTemperature();                   // read your temperature sensor to execute temperature compensation
+        temperature = readTemperature();                   //  temperature compensation
         voltagePH = analogRead(PH_PIN)/1024.0*5000;          // read the ph voltage
         phValue    = ph.readPH(voltagePH,temperature);       // convert voltage to pH with temperature compensation
         Serial.print("pH:");
